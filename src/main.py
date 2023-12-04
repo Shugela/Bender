@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os
 
 from Bot import bot
-from commands import test
+from commands.games import games
 
 
 @bot.bot.event
