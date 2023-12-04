@@ -3,6 +3,7 @@ from discord.ext import commands
 from dotenv import load_dotenv
 import os
 
+
 """
 TODO : - Being able to chose (create class to chose from ?)
 """
@@ -19,6 +20,10 @@ class Bot(commands.Bot):
         self.bot = commands.Bot(command_prefix='!', intents=intents)
         load_dotenv()
 
-    def launch(self):
+    def launch(self) -> None:
         load_dotenv()
         self.bot.run(os.getenv('TOKEN'))
+
+
+bot = Bot()
+
