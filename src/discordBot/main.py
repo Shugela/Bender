@@ -13,7 +13,5 @@ async def on_ready():
     print(f'[INFO] discord version : {discord.__version__}\n')
     await bot.bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name =f"If you need help type !help"))
 
-
-
 if __name__ == '__main__':
     bot.launch()

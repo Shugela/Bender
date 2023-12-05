@@ -28,7 +28,7 @@ function gameloop(){
 }
 
 function main(){
-    initialization()
+    initialization();
 
 }
 
