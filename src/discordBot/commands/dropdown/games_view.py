@@ -13,7 +13,7 @@ class gameDropdown(discord.ui.Select):
         )
 
         async def callback(self, interaction):
-            await interaction.response.send_message("Don't tap It!") # will send the link to the user
+            await interaction.response.send_message("Don't tap It!") # will send the link to the users
 
 
 class GamesView(discord.ui.View):
