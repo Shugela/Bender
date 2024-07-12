@@ -1,20 +1,22 @@
 from flask import render_template, request, jsonify
-from models.DB import GameSession
 import uuid
+from datetime import datetime, timedelta 
 
 from app import app, db
+from models.DB import GameSession
 
 @app.route("/donttapit", methods=["POST"])
 def GET_games_dont_tap_it():
-    print('test')
     data = request.json
     id = str(uuid.uuid1())
-    game = data['game']
 
     print(data)
-    
+
     # Put in DB
-    new_gameSession = GameSession(id=id, game=game)
+    new_gameSession = GameSession(id=id, 
+                                  game=data['game'], 
+                                  expire_date=datetime.now(),
+                                  )
     db.session.add(new_gameSession)
     db.session.commit()
     
@@ -23,6 +25,11 @@ def GET_games_dont_tap_it():
         'url' : 'http://127.0.0.1:5000/donttapit/' + id
     }
     return jsonify(reply)
+
+@app.before_request
+def before_request():
+    if request.endpoint == '/donttapit/<string:id>':
+        print('oui')
 
 @app.route("/donttapit/<string:id>", methods=["GET"])
 def GET_games_dont_tap_it_UUID(id: str):

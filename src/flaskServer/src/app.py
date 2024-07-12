@@ -15,4 +15,4 @@ with app.app_context():
     # Create the tables
     db.create_all()
 
-from controllers import API_games
+from controllers import *
