@@ -2,7 +2,6 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 import os
-from colorama import Fore
 
 from Bot import bot
 from commands.games import games

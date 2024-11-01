@@ -5,7 +5,6 @@ import os
 
 
 """
-TODO : - Being able to chose (create class to chose from ?)
 """
 
 class Bot(commands.Bot):
