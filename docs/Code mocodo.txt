@@ -1,0 +1,19 @@
+PLAYS_SOLO_USER, 11 USERS, 0N SOLO_MATCHES
+USERS: user_id, username, discriminator, avatar_url, created_at
+IN_LEADERBOARD_USER, 1N USERS, 0N LEADERBOARDS
+LEADERBOARDS: total_score, total_wins, rank
+
+SOLO_MATCHES: match_id, score, match_time
+PLAYS_DUEL_USER, 11 USERS, 0N DUEL_MATCHES
+HAS, 1N SERVERS, 0N USERS
+IN_LEADERBOARD_SERVER, 1N SERVERS, 0N LEADERBOARDS
+
+PLAYS_SOLO_GAME, 11 GAMES, 0N SOLO_MATCHES
+DUEL_MATCHES: duel_id, score_user_1, score_user_2, match_time
+PLAYS_DUEL_GAME, 11 GAMES, 0N DUEL_MATCHES
+SERVERS: server_id, server_name
+
+GAME_LINKS: link_id, link_url, link_type, created_at, is_active
+GENERATES_LINK, 1N GAMES, 11 GAME_LINKS
+GAMES: game_id, game_type, start_time
+BELONGS_TO, 1N SERVERS, 0N GAMES
